@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Website</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .section:nth-child(odd) {
+            background: url('background1.jpg') center/cover fixed;
+        }
+
+        .section:nth-child(even) {
+            background: url('background2.jpg') center/cover fixed;
+        }
+
+        /* Add more sections as needed */
+
+        .section h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            max-width: 800px;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h1>Section 1</h1>
+        <p>EARLY MORNING TO EVERYONE</p>
+    </div>
+
+    <div class="section">
+        <h1>Section 2</h1>
+        <p>HOPE A GOOD DAY</p>
+    </div>
+
+    <div class="section">
+        <h1>Section 3</h1>
+        <p>THANK YOU</p>
+    </div>
+
+    <!-- Add more sections as needed -->
+
+    <script>
+        // JavaScript for smooth scrolling (optional)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
